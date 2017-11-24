@@ -1,5 +1,5 @@
 const http = require('http');
-const state = require('./test.json');
+// const state = require('./test.json');
 
 const inBounds = (loc, edge) => {
   return loc.x > 0 && loc.x < edge &&
