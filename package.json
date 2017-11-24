@@ -1,0 +1,11 @@
+{
+  "name": "makkaralaarnio",
+  "version": "0.1",
+  "description": "Web dev & Sausages XMAS minihackathon bot challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atte Saarinen & Samuli Vainio",
+  "license": "MIT"
+}
