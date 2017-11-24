@@ -33,8 +33,6 @@ const getNextTicks = (state) => {
     return resolvePossibleMoves(state, p).push({x: p.x, y: p.y, z: p.z});
   }));
 
-  const ownPossibleMoves = resolvePossibleMoves(state, laarnio, otherPlayersPossibleMoves);
-
   // const maxCost = 10000;
   // let moveCost = 0;
   // let bombCost = 0;
@@ -46,7 +44,11 @@ const getNextTicks = (state) => {
   const tasks = [];
 
   for (let i = 0; i < state.gameInfo.numOfTasksPerTick; i++) {
-    const pm = ownPossibleMoves[0];
+    const ownPossibleMoves = resolvePossibleMoves(state, laarnio, otherPlayersPossibleMoves);
+    const pm = ownPossibleMoves[Math.floor(Math.random() * ownPossibleMoves.length)];
+    laarnio.x = pm.x;
+    laarnio.y = pm.y;
+    laarnio.z = pm.z;
 
     if (pm) {
       tasks.push({
@@ -59,8 +61,6 @@ const getNextTicks = (state) => {
       });
     }
   }
-
-  console.log(tasks);
 
   return tasks;
 };
