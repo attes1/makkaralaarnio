@@ -28,6 +28,13 @@ const resolvePossibleMoves = (state, player, extraAvoidableLocations) => {
 };
 
 const getNextTicks = (state) => {
+  // läpäl
+  tasks.push({
+    task: 'NOOP'
+  });
+
+  return tasks;
+
   const laarnio = state.players.filter((p) => p.name === state.currentPlayer.name)[0];
   const otherPlayersPossibleMoves = [].concat(state.players.filter((p) => p.name === state.currentPlayer.name).map((p) => {
     return resolvePossibleMoves(state, p).push({x: p.x, y: p.y, z: p.z});
