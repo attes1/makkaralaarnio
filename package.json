@@ -1,6 +1,6 @@
 {
   "name": "makkaralaarnio",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "Web dev & Sausages XMAS minihackathon bot challenge",
   "main": "index.js",
   "scripts": {
